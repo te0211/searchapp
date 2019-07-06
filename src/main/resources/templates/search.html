@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search devices</title>
+</head>
+<body>
+
+ <form ui-jp="parsley" id="search-form"  th:action="@{/demo/search}" th:object="${formObject}" method="get">
+                            <div class="row m-b">
+                                <div class="col-sm-6">
+                                    Search by Text: <input id="submit-form" type="text" th:field="*{searchText}" class="form-control input-sm w-auto inline m-r"/>
+                                    <button class="md-btn md-fab m-b-sm indigo"><i class="material-icons md-24">&#xe8b6;</i></button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                       
+
+<!-- <script type="text/javascript">
+
+ <div id = "search-results"></div>
+
+$('#submit-form').on('click', function() {
+   var form = $('#search-form');
+   $.ajax({
+      url: form.attr('action'),
+      data: form.serialize(),
+      type: post,
+      success: function(result) {
+    	  $( "#search-results" ).load( "device.html" );
+    	 
+      }, error: function(error) {
+          // Here you can handle exceptions thrown by the server or your controller.
+      }
+   })
+}
+</script> -->
+</body>
+</html>

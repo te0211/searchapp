@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Device Details</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>UID</th>
+				<th>Profile</th>
+				<th>Hostname</th>
+				<th>Description</th>
+				<th>IP Address</th>
+				<th>Ext IP Addr</th>
+				<th>Last User</th>
+				<th>Agent Version</th>
+				<th>Operating System</th>
+				<th>Serial Number</th>
+				<th>Motherboard</th>
+				<th>Custom field 1</th>
+				<th>Custom field 2</th>
+				<th>Custom field 3</th>
+				<th>Custom field 4</th>
+				<th>Custom field 5</th>
+
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${devices.empty}">
+				<td colspan="2">No Devices found</td>
+			</tr>
+			<tr th:each="device : ${devices}">
+				<td><span th:text="${device.uid}"> UID </span></td>
+				<td><span th:text="${device.profileType}"> Profile </span></td>
+				<td><span th:text="${device.hostName}"> Hostname </span></td>
+				<td><span th:text="${device.description}"> Description </span></td>
+				<td><span th:text="${device.ipAddress}"> IP Address </span></td>
+				<td><span th:text="${device.extIpAddr}"> Ext IP Addr </span></td>
+				<td><span th:text="${device.lastUser}"> Last User </span></td>
+				<td><span th:text="${device.agentVersion}"> Agent Version </span></td>
+				<td><span th:text="${device.os}"> Operating System </span></td>
+				<td><span th:text="${device.serialNumber}"> Serial Number </span></td>
+				<td><span th:text="${device.motherboard}"> Motherboard </span></td>
+				<td><span th:text="${device.customField1}"> Custom field 1 </span></td>
+				<td><span th:text="${device.customField2}"> Custom field 2  </span></td>
+				<td><span th:text="${device.customField3}"> Custom field 3  </span></td>
+				<td><span th:text="${device.customField4}"> Custom field 4  </span></td>
+				<td><span th:text="${device.customField5}"> Custom field 5  </span></td>
+				
+
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
